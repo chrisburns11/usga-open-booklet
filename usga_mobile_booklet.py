@@ -31,7 +31,7 @@ section = st.selectbox("Jump to Section", [
 
 # --- Content Sections ---
 if section == "Welcome Message":
-    st.image("https://upload.wikimedia.org/wikipedia/en/8/86/USGA_logo.png", width=150)
+    st.image("https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7", width=150)
     st.markdown("""
     <div class='section'>
         <div class='subtitle'>Welcome to Oakmont!</div>
