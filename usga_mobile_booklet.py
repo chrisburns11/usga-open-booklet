@@ -1,7 +1,7 @@
 import streamlit as st
 
 # --- Page Config ---
-st.set_page_config(page_title="USGA U.S. Open Booklet", layout="centered", page_icon="🏌️")
+st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="centered", page_icon="🏌️")
 
 # --- Style Override ---
 st.markdown("""
