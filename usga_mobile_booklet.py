@@ -3,6 +3,25 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="centered", page_icon="🏌️")
 
+import streamlit as st
+
+# --- Simple Login ---
+def login():
+    st.sidebar.title("🔐 Login")
+    username = st.sidebar.text_input("Username")
+    password = st.sidebar.text_input("Password", type="password")
+
+    if st.sidebar.button("Login"):
+        if username == "usga" and password == "oakmont2025":
+            st.session_state["authenticated"] = True
+        else:
+            st.sidebar.error("Invalid username or password")
+
+# Check if already logged in
+if "authenticated" not in st.session_state or not st.session_state["authenticated"]:
+    login()
+    st.stop()  # Block access until logged in
+
 # --- Style Override ---
 st.markdown("""
     <style>
