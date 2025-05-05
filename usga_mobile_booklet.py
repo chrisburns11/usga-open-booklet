@@ -8,14 +8,13 @@ import streamlit as st
 # --- Simple Login ---
 def login():
     st.sidebar.title("🔐 Login")
-    username = st.sidebar.text_input("Username")
     password = st.sidebar.text_input("Password", type="password")
 
     if st.sidebar.button("Login"):
-        if username == "usga" and password == "oakmont2025":
+        if password == "oakmont2025":
             st.session_state["authenticated"] = True
         else:
-            st.sidebar.error("Invalid username or password")
+            st.sidebar.error("Invalid password")
 
 # Check if already logged in
 if "authenticated" not in st.session_state or not st.session_state["authenticated"]:
