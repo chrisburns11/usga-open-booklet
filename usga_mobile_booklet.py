@@ -46,7 +46,8 @@ if section == "Welcome Message":
     <div class='section'>
         <div class='subtitle'>Welcome to Oakmont!</div>
         <div class='content'>
-        We are thrilled to host you at the 2025 U.S. Open Championship. This interactive booklet is your digital hub for everything from schedules to dining to transportation. Swipe through and tap the menu to jump around.
+        On behalf of the United States Golf Association, welcome to the 125th U.S. Open at Oakmont Country Club. The
+following information relates to the play and conduct of the championship.
         </div>
     </div>
     """, unsafe_allow_html=True)
