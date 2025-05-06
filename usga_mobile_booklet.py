@@ -11,8 +11,6 @@ st.markdown("</div>", unsafe_allow_html=True)
 # Store in session state
 st.session_state.dark_mode = dark_mode
 
-toggle = st.button("🌙" if not st.session_state.dark_mode else "☀️", key="theme_toggle", help="Toggle light/dark mode")
-
 if toggle:
     st.session_state.dark_mode = not st.session_state.dark_mode
 
