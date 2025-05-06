@@ -46,6 +46,7 @@ if section == "Welcome Message":
     <div class='section'>
         <div class='subtitle'>Welcome to Oakmont!</div>
         <div class='content'>
+        " "
         Welcome to the 2025 U.S. Open at Oakmont! This mobile booklet is your go-to guide for everything you need during championship week — from schedules and dining options to transportation and player services. We’re thrilled to have you here and are committed to making your experience seamless and unforgettable.
         </div>
     </div>
