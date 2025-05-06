@@ -12,18 +12,18 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Initialize dark mode ---
+# --- Dark mode state ---
 if "dark_mode" not in st.session_state:
     st.session_state["dark_mode"] = False
 
-# --- Handle toggle via query param ---
+# --- Query param toggle ---
 params = st.query_params
 if "toggle_theme" in params:
     st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.query_params = {}  # clear param
-    st.rerun()  # rerun app to reflect change
+    st.query_params = {}  # clear param AFTER applying
+    st.rerun()  # ensure toggle persists
 
-# --- Inject floating toggle button ---
+# --- Inject fixed top-right toggle ---
 icon = "☀️" if st.session_state["dark_mode"] else "🌙"
 st.markdown(f"""
 <style>
@@ -43,7 +43,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# --- Apply Dark or Light Mode Styling ---
+# --- Apply theme ---
 if st.session_state["dark_mode"]:
     st.markdown("""
         <style>
