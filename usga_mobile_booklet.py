@@ -14,6 +14,45 @@ st.markdown("""
 
 import streamlit as st
 
+# Initialize theme state
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = False
+
+# Theme toggle button
+toggle = st.button("🌙" if not st.session_state.dark_mode else "☀️", key="theme_toggle", help="Toggle light/dark mode")
+
+# Toggle behavior
+if toggle:
+    st.session_state.dark_mode = not st.session_state.dark_mode
+
+if st.session_state.dark_mode:
+    st.markdown("""
+        <style>
+            body { background-color: #111111; color: #f0f0f0; }
+            .title, .subtitle, .content { color: #f0f0f0 !important; }
+        </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+        <style>
+            body { background-color: #ffffff; color: #222222; }
+            .title, .subtitle, .content { color: #222222 !important; }
+        </style>
+    """, unsafe_allow_html=True)
+
+st.markdown("""
+    <style>
+        div[data-testid="stButton"] button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+import streamlit as st
+
 # --- Style Override ---
 st.markdown("""
     <style>
