@@ -15,15 +15,21 @@ if toggle:
 if st.session_state.dark_mode:
     st.markdown("""
         <style>
-        body { background-color: #111111; color: #f0f0f0; }
-        .title, .subtitle, .content { color: #f0f0f0 !important; }
+        .main { background-color: #111111 !important; }
+        .block-container { background-color: #111111 !important; }
+        .title, .subtitle, .content, .stMarkdown, .stTextInput, .stSelectbox {
+            color: #f0f0f0 !important;
+        }
         </style>
     """, unsafe_allow_html=True)
 else:
     st.markdown("""
         <style>
-        body { background-color: #ffffff; color: #222222; }
-        .title, .subtitle, .content { color: #222222 !important; }
+        .main { background-color: #ffffff !important; }
+        .block-container { background-color: #ffffff !important; }
+        .title, .subtitle, .content, .stMarkdown, .stTextInput, .stSelectbox {
+            color: #222222 !important;
+        }
         </style>
     """, unsafe_allow_html=True)
 
