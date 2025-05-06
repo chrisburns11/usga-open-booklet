@@ -3,16 +3,16 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7")
 
-# --- Floating Top-Right Toggle Button with Emoji ---
+# --- Theme State ---
 if "dark_mode" not in st.session_state:
     st.session_state["dark_mode"] = False
 
 params = st.query_params
 if "toggle_theme" in params:
     st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.query_params = {}  # clear after use
+    st.query_params = {}  # Clear it after update
 
-# --- Render toggle button with link
+# --- Floating Toggle Button + JS Redirect ---
 toggle_icon = "☀️" if st.session_state["dark_mode"] else "🌙"
 st.markdown(f"""
 <style>
@@ -24,41 +24,11 @@ st.markdown(f"""
 }}
 </style>
 <div id="theme-toggle">
-    <a href="?toggle_theme=true">
-        <button style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
-            {toggle_icon}
-        </button>
-    </a>
+    <button onclick="window.location.search='?toggle_theme=true'" style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
+        {toggle_icon}
+    </button>
 </div>
 """, unsafe_allow_html=True)
-
-# --- Apply Dark/Light Mode Styling with Animation ---
-if st.session_state["dark_mode"]:
-    st.markdown("""
-        <style>
-        .main, .block-container {
-            background-color: #111111 !important;
-            color: #f0f0f0 !important;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-        .title, .subtitle, .content {
-            color: #f0f0f0 !important;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-else:
-    st.markdown("""
-        <style>
-        .main, .block-container {
-            background-color: #ffffff !important;
-            color: #222222 !important;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-        .title, .subtitle, .content {
-            color: #222222 !important;
-        }
-        </style>
-    """, unsafe_allow_html=True)
 
 # --- Style Override ---
 st.markdown("""
