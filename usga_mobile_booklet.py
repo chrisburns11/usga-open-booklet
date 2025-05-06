@@ -12,18 +12,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Dark mode state ---
+# --- Initialize theme state ---
 if "dark_mode" not in st.session_state:
     st.session_state["dark_mode"] = False
 
-# --- Query param toggle ---
 params = st.query_params
 if "toggle_theme" in params:
     st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.query_params = {}  # clear param AFTER applying
-    st.rerun()  # ensure toggle persists
+    st.query_params = {}
+    st.rerun()
 
-# --- Inject fixed top-right toggle ---
+# --- Toggle button UI ---
 icon = "☀️" if st.session_state["dark_mode"] else "🌙"
 st.markdown(f"""
 <style>
@@ -43,30 +42,28 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# --- Apply theme ---
+# --- Fully apply dark or light styles across app
 if st.session_state["dark_mode"]:
     st.markdown("""
         <style>
-        .main, .block-container {
+        html, body, .stApp, .main, .block-container {
             background-color: #111111 !important;
             color: #f0f0f0 !important;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .title, .subtitle, .content {
-            color: #f0f0f0 !important;
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         </style>
     """, unsafe_allow_html=True)
 else:
     st.markdown("""
         <style>
-        .main, .block-container {
+        html, body, .stApp, .main, .block-container {
             background-color: #ffffff !important;
             color: #222222 !important;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .title, .subtitle, .content {
-            color: #222222 !important;
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         </style>
     """, unsafe_allow_html=True)
