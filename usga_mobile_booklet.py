@@ -48,14 +48,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-import streamlit as st
-
-# Initialize theme state
-if "dark_mode" not in st.session_state:
-    st.session_state.dark_mode = False
-
-import streamlit as st
-
 # --- Style Override ---
 st.markdown("""
     <style>
