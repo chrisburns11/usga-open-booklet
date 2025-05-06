@@ -12,17 +12,19 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Theme State ---
+# --- Initialize dark mode ---
 if "dark_mode" not in st.session_state:
     st.session_state["dark_mode"] = False
 
+# --- Handle toggle via query param ---
 params = st.query_params
 if "toggle_theme" in params:
     st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.query_params = {}  # clear
+    st.query_params = {}  # clear param
+    st.rerun()  # rerun app to reflect change
 
-# --- Inject Floating Toggle Button with JS-based redirect ---
-toggle_icon = "☀️" if st.session_state["dark_mode"] else "🌙"
+# --- Inject floating toggle button ---
+icon = "☀️" if st.session_state["dark_mode"] else "🌙"
 st.markdown(f"""
 <style>
 #theme-toggle {{
@@ -33,20 +35,22 @@ st.markdown(f"""
 }}
 </style>
 <div id="theme-toggle">
-    <button onclick="window.location.href='?toggle_theme=true'" style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
-        {toggle_icon}
-    </button>
+    <a href="?toggle_theme=true">
+        <button style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
+            {icon}
+        </button>
+    </a>
 </div>
 """, unsafe_allow_html=True)
 
-# --- Apply Styles Based on Theme ---
+# --- Apply Dark or Light Mode Styling ---
 if st.session_state["dark_mode"]:
     st.markdown("""
         <style>
         .main, .block-container {
             background-color: #111111 !important;
             color: #f0f0f0 !important;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .title, .subtitle, .content {
             color: #f0f0f0 !important;
@@ -59,7 +63,7 @@ else:
         .main, .block-container {
             background-color: #ffffff !important;
             color: #222222 !important;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .title, .subtitle, .content {
             color: #222222 !important;
