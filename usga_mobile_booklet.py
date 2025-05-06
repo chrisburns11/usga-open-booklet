@@ -56,7 +56,11 @@ elif section == "Schedule Overview":
     <div class='section'>
         <div class='subtitle'>Key Championship Dates</div>
         <div class='content'>
-        - Mon, June 9: Player registration & practice rounds<br>
+        - Mon, June 9: Player Registration<br>
+            The Player Relations office is in the Swat Room, adjacent to the Locker Room, and is open daily from 5:00 A.M. - 9:00 P.M. Player Registration will be available during the following hours:
+            • Saturday, June 8th: 12:00 P.M. - 6:00 P.M.
+            • Sunday, June 9th: 7:00 A.M. - 6:00 P.M.
+            • Monday, June 10th: 6:00 A.M. - 6:00 P.M.
         - Tue, June 10: Practice rounds & media day<br>
         - Wed, June 11: Final practice day<br>
         - Thu–Sun, June 12–15: Championship rounds
