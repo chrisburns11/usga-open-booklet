@@ -1,7 +1,7 @@
 import streamlit as st
 
 # --- Page Config ---
-st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://github.com/chrisburns11/usga-open-booklet/blob/main/oakmont_icon_32.png")
+st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://raw.githubusercontent.com/chrisburns11/usga-open-booklet/main/oakmont_icon_32.png")
 
 # --- Hide Streamlit UI ---
 st.markdown("""
