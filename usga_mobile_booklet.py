@@ -3,6 +3,15 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="centered", page_icon="🏌️")
 
+# --- Hide Streamlit UI ---
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
 import streamlit as st
 
 # --- Style Override ---
