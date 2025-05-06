@@ -7,10 +7,10 @@ st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_
 if "dark_mode" not in st.session_state:
     st.session_state["dark_mode"] = False
 
-query_params = st.experimental_get_query_params()
+query_params = st.query_params()
 if "toggle_theme" in query_params:
     st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.experimental_set_query_params()  # Clear params after use
+    st.query_params()  # Clear params after use
 
 toggle_code = f"""
 <style>
