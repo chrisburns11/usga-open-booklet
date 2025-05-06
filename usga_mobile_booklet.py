@@ -7,13 +7,9 @@ st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_
 st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
 dark_mode = st.toggle("🌙 Dark Mode", value=st.session_state.get("dark_mode", False))
 st.markdown("</div>", unsafe_allow_html=True)
-
-# Store in session state
 st.session_state.dark_mode = dark_mode
 
-if toggle:
-    st.session_state.dark_mode = not st.session_state.dark_mode
-
+# --- Apply Dynamic Styles ---
 if st.session_state.dark_mode:
     st.markdown("""
         <style>
