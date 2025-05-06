@@ -3,9 +3,11 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7")
 
-# --- Theme Toggle ---
+# --- Theme Toggle with Fix ---
 st.markdown("<div style='text-align: right;'>", unsafe_allow_html=True)
 dark_mode = st.toggle("🌙 Dark Mode", value=st.session_state.get("dark_mode", False))
+st.markdown("</div>", unsafe_allow_html=True)
+
 if "dark_mode" not in st.session_state or dark_mode != st.session_state.dark_mode:
     st.session_state["dark_mode"] = dark_mode
 
@@ -30,18 +32,6 @@ else:
         }
         </style>
     """, unsafe_allow_html=True)
-
-# --- Button Style Override (Top-right)
-st.markdown("""
-    <style>
-    div[data-testid="stButton"] button {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        z-index: 9999;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 # --- Hide Streamlit UI ---
 st.markdown("""
