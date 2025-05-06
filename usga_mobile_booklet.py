@@ -12,58 +12,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Initialize Dark Mode State ---
-if "dark_mode" not in st.session_state:
-    st.session_state["dark_mode"] = False
-
-# --- Handle Toggle via Query Param ---
-params = st.query_params
-if "toggle" in params:
-    st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.query_params = {}
-    st.rerun()
-
-# --- Floating Toggle Button ---
-icon = "☀️" if st.session_state["dark_mode"] else "🌙"
-st.markdown(f"""
-<style>
-#theme-toggle {{
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10000;
-}}
-</style>
-<div id="theme-toggle">
-    <a href="?toggle=true" target="_self">
-        <button style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
-            {icon}
-        </button>
-    </a>
-</div>
-""", unsafe_allow_html=True)
-
-# --- Apply Dark or Light Theme ---
-if st.session_state["dark_mode"]:
-    st.markdown("""
-        <style>
-        html, body, .stApp {{
-            background-color: #111111 !important;
-            color: #f0f0f0 !important;
-        }}
-        </style>
-    """, unsafe_allow_html=True)
-    st.title("🌙 Dark Mode")
-else:
-    st.markdown("""
-        <style>
-        html, body, .stApp {{
-            background-color: #ffffff !important;
-            color: #222222 !important;
-        }}
-        </style>
-    """, unsafe_allow_html=True)
-    st.title("☀️ Light Mode")
 
 # --- Style Override ---
 st.markdown("""
