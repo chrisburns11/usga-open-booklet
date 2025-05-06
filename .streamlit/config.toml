@@ -4,3 +4,18 @@ backgroundColor = "#ffffff"      # clean white
 secondaryBackgroundColor = "#f0f2f6"  # light gray for card contrast
 textColor = "#002664"            # USGA navy blue
 font = "sans serif"
+
+[server]
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false
+serverAddress = "0.0.0.0"
+serverPort = 8501
+gatherUsageStats = false
+
+[client]
+showSidebarNavigation = false
+
+[ui]
+favicon = "https://your-image-host.com/oakmont-favicon.png"
