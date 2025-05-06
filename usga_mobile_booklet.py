@@ -35,7 +35,7 @@ st.markdown(f"""
 }}
 </style>
 <div id="theme-toggle">
-    <a href="?toggle_theme=true">
+    <a href="?toggle_theme=true" target="_self">
         <button style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
             {icon}
         </button>
