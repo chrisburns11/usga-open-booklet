@@ -57,7 +57,7 @@ elif section == "Schedule Overview":
         <div class='subtitle'>Key Championship Dates</div>
         <div class='content'>
         <br>
-            Player Registration will be available during the following hours:<br>
+            Player Registration<br>
             &emsp;&emsp;• Saturday, June 8th (12:00 P.M. - 6:00 P.M.)<br>
             &emsp;&emsp;• Sunday, June 9th (7:00 A.M. - 6:00 P.M.)<br>
             &emsp;&emsp;• Monday, June 10th (6:00 A.M. - 6:00 P.M.)<br>
