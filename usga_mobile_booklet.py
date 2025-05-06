@@ -20,7 +20,7 @@ st.markdown("""
     .title {font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #002664;}
     .section {margin-top: 2rem; margin-bottom: 2rem;}
     .subtitle {font-size: 1.25rem; font-weight: 600; color: #005BAC; margin-top: 1rem;}
-    .content {font-size: 1rem; line-height: 1.6; color: #333333;}
+    .content {font-size: 1rem; line-height: 1.6; color: #FFFFFF;}
     .button {background-color: #002664; color: white; border-radius: 12px; padding: 0.6rem 1rem; border: none; font-weight: bold;}
     </style>
 """, unsafe_allow_html=True)
