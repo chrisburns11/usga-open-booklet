@@ -10,9 +10,9 @@ if "dark_mode" not in st.session_state:
 params = st.query_params
 if "toggle_theme" in params:
     st.session_state["dark_mode"] = not st.session_state["dark_mode"]
-    st.query_params = {}  # Clear it after update
+    st.query_params = {}  # clear
 
-# --- Floating Toggle Button + JS Redirect ---
+# --- Inject Floating Toggle Button with JS-based redirect ---
 toggle_icon = "☀️" if st.session_state["dark_mode"] else "🌙"
 st.markdown(f"""
 <style>
@@ -24,11 +24,39 @@ st.markdown(f"""
 }}
 </style>
 <div id="theme-toggle">
-    <button onclick="window.location.search='?toggle_theme=true'" style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
+    <button onclick="window.location.href='?toggle_theme=true'" style="font-size:1.2rem; padding:0.4rem 0.75rem; border-radius:10px; border:none; background:#005BAC; color:white;">
         {toggle_icon}
     </button>
 </div>
 """, unsafe_allow_html=True)
+
+# --- Apply Styles Based on Theme ---
+if st.session_state["dark_mode"]:
+    st.markdown("""
+        <style>
+        .main, .block-container {
+            background-color: #111111 !important;
+            color: #f0f0f0 !important;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .title, .subtitle, .content {
+            color: #f0f0f0 !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+        <style>
+        .main, .block-container {
+            background-color: #ffffff !important;
+            color: #222222 !important;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .title, .subtitle, .content {
+            color: #222222 !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
 # --- Style Override ---
 st.markdown("""
