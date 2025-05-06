@@ -3,6 +3,42 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7")
 
+# --- Theme Toggle ---
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = False
+
+toggle = st.button("🌙" if not st.session_state.dark_mode else "☀️", key="theme_toggle", help="Toggle light/dark mode")
+
+if toggle:
+    st.session_state.dark_mode = not st.session_state.dark_mode
+
+if st.session_state.dark_mode:
+    st.markdown("""
+        <style>
+        body { background-color: #111111; color: #f0f0f0; }
+        .title, .subtitle, .content { color: #f0f0f0 !important; }
+        </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+        <style>
+        body { background-color: #ffffff; color: #222222; }
+        .title, .subtitle, .content { color: #222222 !important; }
+        </style>
+    """, unsafe_allow_html=True)
+
+# --- Button Style Override (Top-right)
+st.markdown("""
+    <style>
+    div[data-testid="stButton"] button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 9999;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # --- Hide Streamlit UI ---
 st.markdown("""
     <style>
@@ -17,39 +53,6 @@ import streamlit as st
 # Initialize theme state
 if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = False
-
-# Theme toggle button
-toggle = st.button("🌙" if not st.session_state.dark_mode else "☀️", key="theme_toggle", help="Toggle light/dark mode")
-
-# Toggle behavior
-if toggle:
-    st.session_state.dark_mode = not st.session_state.dark_mode
-
-if st.session_state.dark_mode:
-    st.markdown("""
-        <style>
-            body { background-color: #111111; color: #f0f0f0; }
-            .title, .subtitle, .content { color: #f0f0f0 !important; }
-        </style>
-    """, unsafe_allow_html=True)
-else:
-    st.markdown("""
-        <style>
-            body { background-color: #ffffff; color: #222222; }
-            .title, .subtitle, .content { color: #222222 !important; }
-        </style>
-    """, unsafe_allow_html=True)
-
-st.markdown("""
-    <style>
-        div[data-testid="stButton"] button {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            z-index: 9999;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 import streamlit as st
 
