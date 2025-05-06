@@ -3,12 +3,12 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7")
 
-# --- Remove Streamlit Menu and Footer ---
+# --- Hide Streamlit UI Elements ---
 st.markdown("""
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
+    #MainMenu, header, footer {visibility: hidden;}
+    .stApp > footer {display: none;}
+    .viewerBadge_container__1QSob {display: none !important;}
     </style>
 """, unsafe_allow_html=True)
 
