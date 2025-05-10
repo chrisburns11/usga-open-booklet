@@ -14,43 +14,40 @@ st.markdown("""
 
 import streamlit as st
 
-# --- Sidebar Toggle (can move to top-right using layout CSS) ---
-theme = st.toggle("🌗 Dark Mode", value=False)
+import streamlit as st
 
-# --- CSS Injection based on theme ---
-if theme:
-    st.markdown(
-        """
+# Force wide layout
+st.set_page_config(layout="wide")
+
+# --- Dark Mode Toggle ---
+dark_mode = st.toggle("🌙 Dark Mode", value=False)
+
+# --- Apply custom styles based on toggle ---
+def inject_css(is_dark):
+    if is_dark:
+        css = """
         <style>
-        body {
-            background-color: #1e1e1e;
-            color: white;
-        }
-        .stApp {
-            background-color: #1e1e1e;
-            color: white;
-        }
-        .css-1d391kg, .css-1v0mbdj {  /* fix for widgets */
-            background-color: #333 !important;
-            color: white !important;
-        }
-        .css-ffhzg2 { color: white !important; }
+            html, body, [class^="css"]  {
+                background-color: #1e1e1e !important;
+                color: #f5f5f5 !important;
+            }
+            a, .stMarkdown, .stText, .stButton>button {
+                color: #f5f5f5 !important;
+            }
         </style>
-        """, unsafe_allow_html=True)
-else:
-    st.markdown(
         """
+    else:
+        css = """
         <style>
-        body {
-            background-color: white;
-            color: black;
-        }
-        .stApp {
-            background-color: white;
-            color: black;
-        }
+            html, body, [class^="css"]  {
+                background-color: white !important;
+                color: black !important;
+            }
         </style>
-        """, unsafe_allow_html=True)
+        """
+    st.markdown(css, unsafe_allow_html=True)
+
+inject_css(dark_mode)
 
 # --- Style Override ---
 st.markdown("""
