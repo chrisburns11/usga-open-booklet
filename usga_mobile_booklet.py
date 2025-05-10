@@ -15,6 +15,10 @@ st.markdown("""
 # --- Dark Mode Toggle ---
 dark_mode = st.toggle("🌙 Dark Mode", value=False)
 
+col1, col2, col3 = st.columns([10, 1, 1])
+with col3:
+    dark_mode = st.toggle("🌙", value=False, label_visibility="collapsed")
+
 # --- Apply custom styles based on toggle ---
 def inject_css(is_dark):
     if is_dark:
