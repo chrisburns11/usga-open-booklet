@@ -44,10 +44,6 @@ def apply_theme(is_dark):
 
 apply_theme(dark_mode)
 
-# Example content to test style
-st.title("U.S. Open Player Memo")
-st.write("This content should follow the selected theme.")
-
 # --- Hide Streamlit UI Elements ---
 st.markdown("""
     <style>
