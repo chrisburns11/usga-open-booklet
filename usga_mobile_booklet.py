@@ -12,6 +12,46 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+import streamlit as st
+
+# --- Sidebar Toggle (can move to top-right using layout CSS) ---
+theme = st.toggle("🌗 Dark Mode", value=False)
+
+# --- CSS Injection based on theme ---
+if theme:
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+        }
+        .stApp {
+            background-color: #1e1e1e;
+            color: white;
+        }
+        .css-1d391kg, .css-1v0mbdj {  /* fix for widgets */
+            background-color: #333 !important;
+            color: white !important;
+        }
+        .css-ffhzg2 { color: white !important; }
+        </style>
+        """, unsafe_allow_html=True)
+else:
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+        .stApp {
+            background-color: white;
+            color: black;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
 # --- Style Override ---
 st.markdown("""
     <style>
