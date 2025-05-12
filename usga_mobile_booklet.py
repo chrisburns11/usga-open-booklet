@@ -84,13 +84,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <div class='title'>2025 U.S. Open Player Memo</div>", unsafe_allow_html=True)
-    """
-)
-
 # --- Navigation ---
 section = st.selectbox("", [
     "Welcome Message",
