@@ -72,28 +72,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Header ---
+
+import streamlit as st
+
 st.markdown(
     """
-    <style>
-        .title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            color: #002664;
-            margin-top: 10px;
-            margin-bottom: 30px;
-            font-family: 'Segoe UI', sans-serif;
-        }
-    </style>
-
     <div style="text-align: center;">
         <img src="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7" width="150">
     </div>
 
-    <div class="title">2025 U.S. Open Player Memo</div>
+    <h1 style="text-align: center; color: #002664; font-family: 'Segoe UI', sans-serif;">
+        2025 U.S. Open Player Memo
+    </h1>
     """,
     unsafe_allow_html=True
 )
+
 st.markdown("<div class='title'>2025 U.S. Open Player Memo</div>", unsafe_allow_html=True)
 
 # --- Navigation ---
