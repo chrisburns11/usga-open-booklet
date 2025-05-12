@@ -63,7 +63,7 @@ st.markdown("""
     <style>
     .main {background-color: #f9f9f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;}
     .block-container {padding-top: 2rem; padding-bottom: 2rem;}
-    .title {font-size: 2rem; font-weight: 450; margin-bottom: 0.5rem; color: #ffffff;}
+    .title {font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; color: #ffffff;}
     .section {margin-top: 2rem; margin-bottom: 2rem;}
     .subtitle {font-size: 1.25rem; font-weight: 600; color: #005BAC; margin-top: 1rem;}
     .content {font-size: 1rem; line-height: 1.6; color: #FFFFFF;}
