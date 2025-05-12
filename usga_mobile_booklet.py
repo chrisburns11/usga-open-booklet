@@ -8,7 +8,7 @@ st.markdown("""
     <style>
     /* Change toggle label color */
     label[data-testid="stToggleLabel"] {
-        color: #555555;  /* light grey/dark text for visibility */
+        color: #999999;  /* light grey/dark text for visibility */
         font-weight: bold;
     }
 
