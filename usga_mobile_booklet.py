@@ -38,7 +38,7 @@ def apply_theme(is_dark):
                 color: #D3D3D3;
             }
             .stMarkdown, .stText, .stDataFrame, .stButton > button, .stSlider, .stSelectbox {
-                color: #f5f5f5 !important;
+                color: #D3D3D3 !important;
             }
             .stTextInput, .stTextArea, .stSelectbox, .stMultiSelect, .stDateInput {
                 background-color: #333 !important;
