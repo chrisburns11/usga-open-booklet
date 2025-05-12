@@ -14,7 +14,7 @@ st.markdown("""
 
     /* Adjust toggle knob and background */
     div[data-testid="stToggle"] > div {
-        background-color: #ccc !important;  /* inactive background */
+        background-color: #111 !important;  /* inactive background */
     }
 
     div[data-testid="stToggle"] > div > div {
