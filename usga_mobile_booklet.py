@@ -76,14 +76,20 @@ st.markdown("""
 import streamlit as st
 
 st.markdown(
+    """
     <div style="text-align: center;">
         <img src="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7" width="150">
     </div>
-    ,
+    """,
     unsafe_allow_html=True
 )
 
-st.markdown("<div class='title'>2025 U.S. Open Player Memo</div>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <div class='title'>2025 U.S. Open Player Memo</div>", unsafe_allow_html=True)
+    """
+)
 
 # --- Navigation ---
 section = st.selectbox("", [
