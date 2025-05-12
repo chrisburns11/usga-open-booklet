@@ -34,8 +34,8 @@ def apply_theme(is_dark):
             """
             <style>
             html, body, .stApp {
-                background-color: #f2f2f2;
-                color: #f2f2f2;
+                background-color: #ffffff;
+                color: #ffffff;
             }
             .stMarkdown, .stText, .stDataFrame, .stButton > button, .stSlider, .stSelectbox {
                 color: #f5f5f5 !important;
