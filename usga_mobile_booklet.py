@@ -72,9 +72,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Header ---
-
-import streamlit as st
-
 st.markdown(
     """
     <div style="text-align: center;">
