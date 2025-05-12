@@ -77,7 +77,7 @@ st.image("https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efc
 st.markdown("<div class='title'>2025 U.S. Open Player Memo</div>", unsafe_allow_html=True)
 
 # --- Navigation ---
-section = st.selectbox("Jump to Section", [
+section = st.selectbox("Menu", [
     "Welcome Message",
     "Schedule Overview",
     "Player Services",
