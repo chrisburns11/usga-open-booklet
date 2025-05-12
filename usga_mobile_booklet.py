@@ -81,7 +81,7 @@ st.markdown(
         <img src="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7" width="150">
     </div>
 
-    <h1 style="text-align: center; color: #002664; font-family: 'Segoe UI', sans-serif;">
+    <h1 style="text-align: center; color: #ffffff; font-family: 'Segoe UI', sans-serif;">
         2025 U.S. Open Player Memo
     </h1>
     """,
