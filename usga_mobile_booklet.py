@@ -6,7 +6,7 @@ st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_
 col1, = st.columns([1])
 
 with col1:
-    dark_mode = st.toggle("🌙 ☀️", value=False, label_visibility="visible")
+    dark_mode = st.toggle("🌙", value=False, label_visibility="visible")
 
 # Apply dark or light mode styles
 def apply_theme(is_dark):
