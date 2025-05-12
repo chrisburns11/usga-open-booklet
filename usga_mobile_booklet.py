@@ -18,7 +18,7 @@ st.markdown("""
     }
 
     div[data-testid="stToggle"] > div > div {
-        background-color: #666 !important;  /* toggle knob */
+        background-color: #121212 !important;  /* toggle knob */
     }
     </style>
 """, unsafe_allow_html=True)
