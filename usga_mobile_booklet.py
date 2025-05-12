@@ -22,7 +22,6 @@ def apply_theme(is_dark):
                 color: #f5f5f5 !important;
             }
             .stTextInput, .stTextArea, .stSelectbox, .stMultiSelect, .stDateInput {
-                background-color: #333 !important;
                 color: white !important;
             }
             </style>
