@@ -6,7 +6,6 @@ st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_
 import streamlit.components.v1 as components
 
 components.html("""
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69MWYNCENJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
