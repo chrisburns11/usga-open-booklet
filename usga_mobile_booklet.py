@@ -14,7 +14,13 @@ components.html("""
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-69MWYNCENJ');
+
+      // ✅ Force a GA4 page_view event
+      gtag('config', 'G-69MWYNCENJ', {
+        'send_page_view': true,
+        'page_path': window.location.pathname,
+        'page_title': document.title
+      });
     </script>
 """, height=0)
 
