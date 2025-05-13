@@ -8,18 +8,28 @@ st.set_page_config(
 )
 
 # ✅ Google Analytics GA4 injection
+import streamlit.components.v1 as components
+
 components.html("""
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69MWYNCENJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      // ✅ Force a GA4 page_view event
+      // ✅ Force a GA4 page_view event with fallback
       gtag('config', 'G-69MWYNCENJ', {
         'send_page_view': true,
         'page_path': window.location.pathname,
         'page_title': document.title
+      });
+
+      // ✅ Also manually log a view just in case
+      gtag('event', 'page_view', {
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: document.title
       });
     </script>
 """, height=0)
