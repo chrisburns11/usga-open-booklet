@@ -3,16 +3,6 @@ import streamlit as st
 # --- Page Config ---
 st.set_page_config(page_title="USGA U.S. Open Player Memo", layout="wide", page_icon="https://idss-proxy.imgix.net/https%3A%2F%2Ffiles.idss.com%2FC32%2F0efcbc6c-d7cc-4aa2-9ee5-ca7e854a3fe3.png?auto=compress%2Cformat&fit=max&h=1080&q=80&w=1920&s=25f63e35e4c282d2d2a004f9827045c7")
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-69MWYNCENJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-69MWYNCENJ');
-</script>
-
 col1, = st.columns([1])
 
 with col1:
@@ -90,6 +80,16 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-69MWYNCENJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-69MWYNCENJ');
+</script>
 
 # --- Navigation ---
 section = st.selectbox("", [
