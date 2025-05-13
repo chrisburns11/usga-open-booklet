@@ -11,26 +11,32 @@ st.set_page_config(
 import streamlit.components.v1 as components
 
 components.html("""
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69MWYNCENJ"></script>
+    <!-- Force GA4 Page View -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      (function(){
+        var script = document.createElement('script');
+        script.setAttribute('async', '');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-69MWYNCENJ';
+        document.head.appendChild(script);
 
-      // ✅ Force a GA4 page_view event with fallback
-      gtag('config', 'G-69MWYNCENJ', {
-        'send_page_view': true,
-        'page_path': window.location.pathname,
-        'page_title': document.title
-      });
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
 
-      // ✅ Also manually log a view just in case
-      gtag('event', 'page_view', {
-        page_location: window.location.href,
-        page_path: window.location.pathname,
-        page_title: document.title
-      });
+        window.addEventListener('load', function() {
+          gtag('js', new Date());
+          gtag('config', 'G-69MWYNCENJ', {
+            send_page_view: true,
+            page_path: window.location.pathname,
+            page_title: document.title
+          });
+
+          gtag('event', 'page_view', {
+            page_location: window.location.href,
+            page_path: window.location.pathname,
+            page_title: document.title
+          });
+        });
+      })();
     </script>
 """, height=0)
 
